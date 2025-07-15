@@ -1,0 +1,11 @@
+[project]
+name = "glfw"
+version = "0.1.0"
+type = "interface"
+
+[build]
+generator = "Visual Studio 17 2022"
+
+[generator."Visual Studio 17 2022"]
+link_dirs = ["./lib"]
+link_libs = ["glfw3"]
