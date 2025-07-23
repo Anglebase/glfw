@@ -1,0 +1,29 @@
+[project]
+name = "glfw"
+version = "0.1.0"
+type = "static"
+
+[target."Windows"]
+sources = [
+    "./platform/win32/win32_module.c",
+    "./platform/win32/win32_time.c",
+    "./platform/win32/win32_thread.c",
+    "./platform/win32/win32_init.c",
+    "./platform/win32/win32_joystick.c",
+    "./platform/win32/win32_monitor.c",
+    "./platform/win32/win32_window.c",
+    "./platform/win32/wgl_context.c",
+]
+defines = ["UNICODE", "_UNICODE", "_GLFW_WIN32"]
+link_libs = ["gdi32"]
+
+[build]
+jobs = 0
+features = ["example"]
+
+[generator."Visual Studio 17 2022"]
+defines = ["_CRT_SECURE_NO_WARNINGS"]
+compile_options = ["/W3"]
+
+[dependencies]
+glad = { url = "@Anglebase/glad", version = "0.1.0", optional = ["example"] }
